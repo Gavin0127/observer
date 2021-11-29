@@ -46,14 +46,17 @@ observer:
 
   sentinelsCheckingPeriodInMin: 1
   connectors:
-    - name: "ReportSinkLogger"
+    - name: "MyMongoConnector"
+      encoder:
+        type: BsonEncoder
+        format: OBJECT
       buffer:
-        maxItems: 100
         maxWaitingTimeInS: 10
       sink:
-        type: LoggerSink
+        type: MongoSink
         config:
-          printReports: false
+          URI: "mongodb://root:password@localhost:27017"
+          database: "reports"
 
   reportMonitor:
     enabled: true
