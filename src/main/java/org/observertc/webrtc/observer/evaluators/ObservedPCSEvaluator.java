@@ -319,7 +319,7 @@ public class ObservedPCSEvaluator implements Observer<ObservedPCS> {
                         .setBrowserId(peerConnectionSample.browserId)
                         .setPeerConnectionUUID(peerConnectionSample.peerConnectionId)
                         .setExtensionType(extensionStat.extensionType)
-                        .setPayload(extensionStat.payload)
+                        .setContent(extensionStat.payload)
                         .build();
                 Report reportRecord = makeReportRecord(observedPCS, observedPCS.serviceUUID, ReportType.EXTENSION, extensionReport);
                 this.extensionReports.onNext(reportRecord);
@@ -343,7 +343,7 @@ public class ObservedPCSEvaluator implements Observer<ObservedPCS> {
                     .setBrowserId(peerConnectionSample.browserId)
                     .setPeerConnectionUUID(peerConnectionSample.peerConnectionId)
                     .setExtensionType(subject.extensionType)
-                    .setPayload(subject.payload)
+                    .setContent(subject.payload)
                     .build();
             Report reportRecord = makeReportRecord(observedPCS, observedPCS.serviceUUID, ReportType.EXTENSION, extensionReport);
             this.extensionReports.onNext(reportRecord);

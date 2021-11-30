@@ -13,7 +13,7 @@ import org.apache.avro.specific.SpecificData;
 @org.apache.avro.specific.AvroGenerated
 public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -1718295876299572799L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtensionReport\",\"namespace\":\"org.observertc.webrtc.schemas.reports\",\"fields\":[{\"name\":\"mediaUnitId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"callName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"browserId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"peerConnectionUUID\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"extensionType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"payload\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ExtensionReport\",\"namespace\":\"org.observertc.webrtc.schemas.reports\",\"fields\":[{\"name\":\"mediaUnitId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"callName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"browserId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"peerConnectionUUID\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"extensionType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"content\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -75,7 +75,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
    private String browserId;
    private String peerConnectionUUID;
    private String extensionType;
-   private String payload;
+   private String content;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -92,16 +92,16 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
    * @param browserId The new value for browserId
    * @param peerConnectionUUID The new value for peerConnectionUUID
    * @param extensionType The new value for extensionType
-   * @param payload The new value for payload
+   * @param content The new value for payload
    */
-  public ExtensionReport(String mediaUnitId, String callName, String userId, String browserId, String peerConnectionUUID, String extensionType, String payload) {
+  public ExtensionReport(String mediaUnitId, String callName, String userId, String browserId, String peerConnectionUUID, String extensionType, String content) {
     this.mediaUnitId = mediaUnitId;
     this.callName = callName;
     this.userId = userId;
     this.browserId = browserId;
     this.peerConnectionUUID = peerConnectionUUID;
     this.extensionType = extensionType;
-    this.payload = payload;
+    this.content = content;
   }
 
   public SpecificData getSpecificData() { return MODEL$; }
@@ -115,7 +115,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
     case 3: return browserId;
     case 4: return peerConnectionUUID;
     case 5: return extensionType;
-    case 6: return payload;
+    case 6: return content;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -130,7 +130,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
     case 3: browserId = value$ != null ? value$.toString() : null; break;
     case 4: peerConnectionUUID = value$ != null ? value$.toString() : null; break;
     case 5: extensionType = value$ != null ? value$.toString() : null; break;
-    case 6: payload = value$ != null ? value$.toString() : null; break;
+    case 6: content = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -199,8 +199,8 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'payload' field.
    * @return The value of the 'payload' field.
    */
-  public String getPayload() {
-    return payload;
+  public String getContent() {
+    return content;
   }
 
 
@@ -252,7 +252,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
     private String browserId;
     private String peerConnectionUUID;
     private String extensionType;
-    private String payload;
+    private String content;
 
     /** Creates a new Builder */
     private Builder() {
@@ -289,8 +289,8 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
         this.extensionType = data().deepCopy(fields()[5].schema(), other.extensionType);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.payload)) {
-        this.payload = data().deepCopy(fields()[6].schema(), other.payload);
+      if (isValidValue(fields()[6], other.content)) {
+        this.content = data().deepCopy(fields()[6].schema(), other.content);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
     }
@@ -325,8 +325,8 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
         this.extensionType = data().deepCopy(fields()[5].schema(), other.extensionType);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.payload)) {
-        this.payload = data().deepCopy(fields()[6].schema(), other.payload);
+      if (isValidValue(fields()[6], other.content)) {
+        this.content = data().deepCopy(fields()[6].schema(), other.content);
         fieldSetFlags()[6] = true;
       }
     }
@@ -575,8 +575,8 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
       * Gets the value of the 'payload' field.
       * @return The value.
       */
-    public String getPayload() {
-      return payload;
+    public String getContent() {
+      return content;
     }
 
 
@@ -585,9 +585,9 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'payload'.
       * @return This builder.
       */
-    public ExtensionReport.Builder setPayload(String value) {
+    public ExtensionReport.Builder setContent(String value) {
       validate(fields()[6], value);
-      this.payload = value;
+      this.content = value;
       fieldSetFlags()[6] = true;
       return this;
     }
@@ -606,7 +606,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public ExtensionReport.Builder clearPayload() {
-      payload = null;
+      content = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -622,7 +622,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
         record.browserId = fieldSetFlags()[3] ? this.browserId : (String) defaultValue(fields()[3]);
         record.peerConnectionUUID = fieldSetFlags()[4] ? this.peerConnectionUUID : (String) defaultValue(fields()[4]);
         record.extensionType = fieldSetFlags()[5] ? this.extensionType : (String) defaultValue(fields()[5]);
-        record.payload = fieldSetFlags()[6] ? this.payload : (String) defaultValue(fields()[6]);
+        record.content = fieldSetFlags()[6] ? this.content : (String) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -697,7 +697,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
       out.writeString(this.extensionType);
     }
 
-    out.writeString(this.payload);
+    out.writeString(this.content);
 
   }
 
@@ -743,7 +743,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
         this.extensionType = in.readString();
       }
 
-      this.payload = in.readString();
+      this.content = in.readString();
 
     } else {
       for (int i = 0; i < 7; i++) {
@@ -798,7 +798,7 @@ public class ExtensionReport extends org.apache.avro.specific.SpecificRecordBase
           break;
 
         case 6:
-          this.payload = in.readString();
+          this.content = in.readString();
           break;
 
         default:
